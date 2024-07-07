@@ -1,5 +1,5 @@
 <template>
-  <div v-if="$apollo.loading" class="relative z-10 w-full h-[60vh] grid place-content-center">Loading...</div>
+  <div v-if="$apollo.loading" class="relative z-10 w-full h-dvh grid place-content-center">Loading...</div>
   <div v-if="error">{{ error.message }}</div>
   <InitialPresentationPage :getAnimes="getAnimes" />
 </template>
