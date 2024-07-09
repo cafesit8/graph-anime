@@ -1,9 +1,9 @@
 <template>
-  <section class="section-initial w-full h-[60vh] relative px-10">
+  <section class="section-initial w-full lg:h-[60vh] h-dvh relative lg:px-10 px-3">
     <div class="w-full h-full flex items-center" v-for="anime in getAnimes" :key="anime.id">
-      <div class="relative z-10 max-w-[50%] flex flex-col gap-5">
-        <h1 class="text-5xl font-bold">{{ anime.title.english || anime.title.userPreferred }}</h1>
-        <p class="text-base text-white/90 text-balance">{{ cleanDescription(anime.description) }}</p>
+      <div class="relative z-10 lg:max-w-[50%] w-full flex flex-col gap-5">
+        <h1 class="lg:text-5xl text-xl font-bold">{{ anime.title.english || anime.title.userPreferred }}</h1>
+        <p class="lg:text-base text-sm text-white/90 text-balance">{{ cleanDescription(anime.description) }}</p>
         <button @click="onClick" class="bg-secondary flex items-center py-1 px-3 rounded-lg self-baseline">
           Ver más
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler text-white/80 icons-tabler-filled icon-tabler-player-play">
@@ -13,7 +13,7 @@
         </button>
       </div>
       <picture class="block w-full h-full absolute left-0 top-0">
-        <img class="w-full h-full object-cover" :src="anime.bannerImage" :alt="anime.title.english" />
+        <img class="w-full h-full object-cover lg:opacity-100 opacity-30" :src="anime.bannerImage" :alt="anime.title.english" />
       </picture>
     </div>
   </section>
