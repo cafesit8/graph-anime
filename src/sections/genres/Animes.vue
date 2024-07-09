@@ -28,7 +28,7 @@ export default {
     return {
       getAnimes: [],
       error: null,
-      genre: "",
+      genre: null,
     }
   },
   created () {
@@ -41,9 +41,12 @@ export default {
       variables () {
         return {
           page: "1",
-          perPage: "15",
+          perPage: "20",
           genre: this.genre
         }
+      },
+      skip () {
+        return !this.genre;
       },
       result ({ data, error }) {
         if (data) {

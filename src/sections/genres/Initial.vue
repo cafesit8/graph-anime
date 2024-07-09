@@ -15,7 +15,7 @@ export default {
     return {
       getAnimes: [],
       error: null,
-      genre: ""
+      genre: null
     }
   },
   created () {
@@ -32,9 +32,14 @@ export default {
           genre: this.genre
         }
       },
+      skip () {
+        return !this.genre;
+      },
       result ({ data, error }) {
         if (data) {
-          this.getAnimes = [data.Page.media[1]]
+          const list = [data.Page.media.find((anime) => anime.bannerImage !== null)]
+          //list.length > 0 ? list : [data.Page.media[0]] 
+          this.getAnimes = list.length > 0 ? list : [data.Page.media[0]] 
         } else {
           this.getAnimes = []
         }

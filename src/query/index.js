@@ -27,7 +27,7 @@ export const getInitialAnime = gql`
 export const getAnimeList = gql`
   query($page: Int, $perPage: Int)  {
     Page(page: $page, perPage: $perPage) {
-      media {
+      media (sort: START_DATE_DESC) {
         id
         title {
           english
@@ -108,6 +108,11 @@ export const getAnimeByGenre = gql`
           extraLarge
           medium
           large
+        }
+        trailer {
+          site
+          thumbnail
+          id
         }
       }
     }

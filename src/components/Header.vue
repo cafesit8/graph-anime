@@ -6,7 +6,7 @@
       </picture>
       <ul class="flex gap-2">
         <li v-for="item in items">
-          <RouterLink :key="item.label" exactActiveClass="text-secondary" :to="item.route"
+          <RouterLink :key="item.label" exactActiveClass="text-[#f47521]" :to="item.route"
             class="p-2 text-lg rounded-lg font-semibold text-white/80">
             {{ item.label }}
           </RouterLink>
