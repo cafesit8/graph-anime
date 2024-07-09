@@ -5,7 +5,7 @@
       class="absolute flex lg:[bottom:-100%] lg:group-hover:bottom-0 bottom-0 duration-150 left-0 w-full h-full to-bottom-0 bg-gradient-to-t from-black">
       <div class="self-end flex justify-between items-center w-full lg:p-3 p-2">
         <p class="text-pretty lg:text-base text-xs">{{ movie.title.userPreferred }}</p>
-        <button class="bg-secondary flex items-center p-2 rounded-full">
+        <button class="bg-secondary flex items-center lg:p-2 p-1 rounded-full">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
             class="icon icon-tabler text-white icons-tabler-filled icon-tabler-player-play">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />

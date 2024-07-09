@@ -1,17 +1,17 @@
 <template>
   <main class="w-full min-h-dvh bg-primary">
-    <section class="section-initial h-dvh relative flex items-center px-10 overflow-hidden">
+    <section class="section-initial min-h-dvh relative flex items-center lg:px-10 px-3 overflow-hidden">
       <YouTube v-if="trailerId" :src="trailerId" ref="youtube" :width="'100%'" :height="'100%'" @ready="onReady"
-      :vars="playerVars" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; object-fit: cover;" />
+      :vars="playerVars" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; object-fit: cover; opacity: 0.3;" />
       <picture v-else class="block w-full h-full absolute left-0 top-0">
-        <img class="w-full h-full object-cover" v-if="!trailerId" :src="anime.bannerImage"
+        <img class="w-full h-full object-cover lg:opacity-100 opacity-30" v-if="!trailerId" :src="anime.bannerImage"
           :alt="anime.userPreferred">
       </picture>
       <div v-if="Object.keys(anime).length > 0" class="relative z-10 w-full flex justify-between items-center text-white">
-        <div class="max-w-[50%] flex flex-col gap-5">
-          <h1 class="text-5xl font-bold">{{ anime.title.english || anime.title.userPreferred }}</h1>
-          <p><span>Genres: </span>{{ anime.genres.join(' | ') }}</p>
-          <p class="text-base text-white/90 text-balance">{{ cleanDescription(anime.description) }}</p>
+        <div class="lg:max-w-[50%] flex flex-col gap-5">
+          <h1 class="lg:text-5xl text-xl font-bold">{{ anime.title.english || anime.title.userPreferred }}</h1>
+          <p class="lg:text-base text-sm"><span>Genres: </span>{{ anime.genres.join(' | ') }}</p>
+          <p class="lg:text-base text-sm text-white/90 text-balance">{{ cleanDescription(anime.description) }}</p>
         </div>
         <div v-if="trailerId">
           <button v-if="!mute" @click="muted" class="bg-black/50 p-3 rounded-full">
