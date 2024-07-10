@@ -3,7 +3,7 @@
     <img :src="movie.coverImage.large" alt="" class="w-full h-full object-cover">
     <div
       class="absolute flex lg:[bottom:-100%] lg:group-hover:bottom-0 bottom-0 duration-150 left-0 w-full h-full to-bottom-0 bg-gradient-to-t from-black">
-      <div class="self-end flex justify-between items-center w-full lg:p-3 p-2">
+      <div class="self-end flex justify-between items-center w-full lg:p-3 p-2 gap-2">
         <p class="text-pretty lg:text-base text-xs">{{ movie.title.userPreferred }}</p>
         <button class="bg-secondary flex items-center lg:p-2 p-1 rounded-full">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
